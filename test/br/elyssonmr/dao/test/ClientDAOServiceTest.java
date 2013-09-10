@@ -23,14 +23,14 @@ public class ClientDAOServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		// Objects setups
-		Client cliente = new Client("Élysson MR", "Inatel",
+		Client cliente = new Client("Ã‰lysson MR", "Inatel",
 				"elysson@inatel.br", 23);
-		Client readClient = new Client(1, "Élysson MR", "Inatel",
+		Client readClient = new Client(1, "Ã‰lysson MR", "Inatel",
 				"elysson@inatel.br", 23);
-		Client updateCliente = new Client(1, "Élysson", "SRS",
+		Client updateCliente = new Client(1, "Ã‰lysson", "SRS",
 				"elysson@inatel.br", 23);
 
-		Client errorUpdate = new Client(100, "Élysson", "SRS",
+		Client errorUpdate = new Client(100, "Ã‰lysson", "SRS",
 				"elysson@inatel.br", 23);
 
 		List<Client> nameCriteria = new ArrayList<Client>();
@@ -68,7 +68,7 @@ public class ClientDAOServiceTest {
 	@Test
 	public void createTest() {
 		try {
-			Client cliente = new Client("Élysson MR", "Inatel",
+			Client cliente = new Client("Ã‰lysson MR", "Inatel",
 					"elysson@inatel.br", 23);
 			long id = dao.create(cliente);
 			assertEquals(1, id);
@@ -80,7 +80,7 @@ public class ClientDAOServiceTest {
 	@Test
 	public void readByIdTest() {
 		try {
-			Client expected = new Client("Élysson MR", "Inatel",
+			Client expected = new Client("Ã‰lysson MR", "Inatel",
 					"elysson@inatel.br", 23);
 			expected.setId(1);
 			Client cliente = dao.readById(1);
@@ -131,7 +131,7 @@ public class ClientDAOServiceTest {
 	@Test
 	public void updateTest() {
 		try {
-			Client updateCliente = new Client(1, "Élysson", "SRS",
+			Client updateCliente = new Client(1, "Ã‰lysson", "SRS",
 					"elysson@inatel.br", 23);
 			Client updatedCliente = dao.update(updateCliente);
 			assertEquals(updateCliente, updatedCliente);
@@ -142,7 +142,7 @@ public class ClientDAOServiceTest {
 
 	@Test(expected = DAOException.class)
 	public void updateErrorTest() throws DAOException {
-		Client errorUpdate = new Client(100, "Élysson", "SRS",
+		Client errorUpdate = new Client(100, "Ã‰lysson", "SRS",
 				"elysson@inatel.br", 23);
 		dao.update(errorUpdate);
 	}
